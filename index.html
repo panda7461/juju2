@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090a10" />
+    <title>呪影ノ刻 | CURSED CLASH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="呪影ノ刻 ホーム">
+          <span class="brand-jp">呪影ノ刻</span>
+          <span class="brand-en">CURSED CLASH</span>
+        </a>
+        <div class="mission"><span>MISSION</span><strong>渋谷事変・残響</strong></div>
+        <button class="sound-btn" id="soundBtn" aria-label="サウンド切り替え" aria-pressed="true"><span>♪</span> SOUND <b>ON</b></button>
+      </header>
+
+      <section class="arena" id="arena" aria-label="バトルフィールド">
+        <div class="city-lines"></div>
+        <div class="hud player-hud">
+          <div class="portrait hero-face">虎</div>
+          <div class="hud-info">
+            <div class="hud-name"><strong>虎杖 悠仁</strong><span>ITADORI YUJI</span></div>
+            <div class="health"><i id="playerHealth"></i></div>
+            <div class="health-label"><span>HP</span><b id="playerHpText">1000 / 1000</b></div>
+          </div>
+        </div>
+
+        <div class="hud enemy-hud">
+          <div class="hud-info">
+            <div class="hud-name"><span>SPECIAL GRADE CURSE</span><strong>漏 瑚</strong></div>
+            <div class="health"><i id="enemyHealth"></i></div>
+            <div class="health-label"><b id="enemyHpText">1200 / 1200</b><span>HP</span></div>
+          </div>
+          <div class="portrait curse-face">呪</div>
+        </div>
+
+        <div class="round"><span>ROUND</span><strong>1</strong></div>
+        <div class="battle-meta"><span id="enemyIntent" aria-live="assertive">READ THE CURSE</span><b>SCORE <i id="score">000000</i></b></div>
+        <div class="combo" id="combo"><strong>0</strong><span>COMBO</span></div>
+        <div class="message" id="message" aria-live="polite">戦闘開始</div>
+
+        <div class="fighter player" id="player">
+          <div class="aura"></div><div class="head"></div><div class="torso"></div><div class="arm arm-a"></div><div class="arm arm-b"></div><div class="leg leg-a"></div><div class="leg leg-b"></div><div class="fist"></div>
+        </div>
+        <div class="fighter enemy" id="enemy">
+          <div class="ember-ring"></div><div class="head"></div><div class="eye"></div><div class="torso"></div><div class="arm arm-a"></div><div class="arm arm-b"></div><div class="leg leg-a"></div><div class="leg leg-b"></div>
+        </div>
+        <div class="impact" id="impact"></div>
+
+        <div class="curse-meter">
+          <div class="meter-label"><span>CURSED ENERGY</span><b id="energyText">72%</b></div>
+          <div class="meter"><i id="energy"></i></div>
+        </div>
+
+        <div class="skills">
+          <button class="skill" data-skill="rush"><kbd>Q</kbd><span><b>逕庭拳</b><small>DIVERGENT FIST</small></span></button>
+          <button class="skill" data-skill="flash"><kbd>W</kbd><span><b>黒 閃</b><small>BLACK FLASH</small></span></button>
+          <button class="skill locked" data-skill="domain"><kbd>E</kbd><span><b>領域展開</b><small>ENERGY 100%</small></span></button>
+        </div>
+        <div class="touch-controls" aria-label="タッチ操作">
+          <div class="touch-move">
+            <button class="touch-button" data-move="left" aria-label="左へ移動">‹</button>
+            <button class="touch-button" data-move="right" aria-label="右へ移動">›</button>
+          </div>
+          <button class="touch-button dodge-button" id="dodgeButton" aria-label="回避する"><span>回避</span><small>DODGE</small></button>
+        </div>
+        <div class="controls"><span><b>A</b><b>D</b> 移動</span><span><b>SPACE</b> 回避</span><span><b>Q</b><b>W</b><b>E</b> 術式</span></div>
+      </section>
+
+      <footer><span>呪いを祓え。</span><p>敵の攻撃を回避し、呪力を溜めて術式を放て。</p><b>BEST TIME&nbsp; 01:42.08</b></footer>
+    </main>
+    <div class="modal" id="modal" aria-hidden="true">
+      <div><small>BATTLE RESULT</small><h2 id="resultTitle">祓除完了</h2><p id="resultText">呪霊を祓いました</p><button id="restart">再戦する</button></div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
