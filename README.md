@@ -1,0 +1,39 @@
+# 呪影ノ刻 | CURSED CLASH
+
+ブラウザですぐ遊べる、呪術バトルをテーマにした1対1アクションゲームです。
+
+## 操作方法
+
+| キー | アクション |
+| --- | --- |
+| `A` / `D` | 左右に移動 |
+| `Space` | 回避して呪力を回復 |
+| `Q` | 逕庭拳 |
+| `W` | 黒閃 |
+| `E` | 領域展開（呪力100%で使用可能） |
+
+画面下部の術式ボタンはクリック／タップでも操作できます。
+
+## GitHub Pagesへの公開
+
+このリポジトリにはGitHub Pages用の自動デプロイが設定されています。リポジトリをGitHubにプッシュした後、次の操作を一度だけ行ってください。
+
+1. リポジトリの **Settings → Pages** を開く。
+2. **Build and deployment → Source** で **GitHub Actions** を選ぶ。
+3. `main` ブランチへマージするか、Actionsの **Deploy game to GitHub Pages** から **Run workflow** を実行する。
+
+公開が完了すると、Actionsのデプロイ画面にプレイ用URLが表示されます。通常は次の形式です。
+
+```text
+https://<GitHubユーザー名>.github.io/<リポジトリ名>/
+```
+
+## ローカル起動
+
+ビルドは不要です。
+
+```bash
+python3 -m http.server 4173
+```
+
+ブラウザで `http://localhost:4173` を開いてください。
